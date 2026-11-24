@@ -1,338 +1,471 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#0f172a">
-  <meta name="description" content="Om Bhandari — aspiring cricketer, student and BCC co-founder.">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0f172a">
+<meta name="description" content="Om Bhandari — aspiring cricketer, student and BCC co-founder.">
 
-  <title>Om Bhandari | Portfolio</title>
-  <link rel="icon" type="image/jpeg" href="assets/images/om.jpeg">
+<title>Om Bhandari | Portfolio</title>
+<link rel="icon" type="image/jpeg" href="assets/images/om.jpeg">
 
-  <style>
-    #menu { display: none; }
-    #menu:target { display: block; }
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: Arial, sans-serif;
-    }
+html {
+    scroll-behavior: smooth;
+}
 
-    body {
-      background: linear-gradient(135deg, #0f172a, #1e293b, #0b1220);
-      color: white;
-      line-height: 1.6;
-      overflow-x: hidden;
-    }
+body {
+    background:
+    radial-gradient(circle at 12% 8%, rgba(0,188,212,.16), transparent 28rem),
+    radial-gradient(circle at 88% 35%, rgba(37,99,235,.16), transparent 30rem),
+    linear-gradient(135deg,#070d1b,#101b32 55%,#07111f);
+    background-attachment: fixed;
+    color: white;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
+a {
+    color: inherit;
+    text-decoration: none;
+}
 
-    button {
-      background: linear-gradient(90deg, #2563eb, #00bcd4);
-      color: white;
-      border: none;
-      padding: 10px 15px;
-      border-radius: 10px;
-      cursor: pointer;
-      font-weight: bold;
-      transition: 0.3s;
-    }
+button {
+    background: linear-gradient(90deg,#2563eb,#00bcd4);
+    color: white;
+    border: none;
+    padding: 12px 18px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: .3s;
+}
 
-    /* FLOATING BACKGROUND */
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 20px #00e5ff;
+}
 
-    body::before,
-    body::after {
-      content: "";
-      position: fixed;
-      width: 200%;
-      height: 200%;
-      top: -50%;
-      left: -50%;
-      background-image:
-        radial-gradient(circle, rgba(0,255,255,0.2) 2px, transparent 2px),
-        radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
-      background-size: 80px 80px, 120px 120px;
-      animation: moveBg 25s linear infinite;
-      z-index: -1;
-      opacity: 0.5;
-      pointer-events: none;
-    }
+/* BACKGROUND */
 
-    body::after {
-      animation-duration: 40s;
-      opacity: 0.3;
-    }
+body::before,
+body::after {
+    content: "";
+    position: fixed;
+    width: 200%;
+    height: 200%;
+    top: -50%;
+    left: -50%;
+    background-image:
+    radial-gradient(circle,rgba(0,255,255,.2) 2px,transparent 2px),
+    radial-gradient(circle,rgba(255,255,255,.1) 1px,transparent 1px);
+    background-size: 80px 80px,120px 120px;
+    animation: moveBg 25s linear infinite;
+    z-index: -1;
+    opacity: .4;
+    pointer-events: none;
+}
 
-    @keyframes moveBg {
-      0% { transform: translate(0, 0); }
-      100% { transform: translate(120px, 120px); }
-    }
+body::after {
+    animation-duration: 40s;
+    opacity: .2;
+}
 
-    /* HEADER */
+@keyframes moveBg {
+    from { transform: translate(0,0); }
+    to { transform: translate(120px,120px); }
+}
 
-    header {
-      text-align: center;
-      padding: 50px 20px;
-      background: linear-gradient(135deg, #0d47a1, #00bcd4);
-      border-bottom: 3px solid #00e5ff;
-      animation: fadeDown 1s ease;
-    }
+/* HEADER */
 
-    @keyframes fadeDown {
-      from {
-        opacity: 0;
-        transform: translateY(-40px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
+header {
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    padding: 65px 20px 55px;
+    background: linear-gradient(120deg,rgba(10,48,105,.96),rgba(0,150,180,.88));
+    border-bottom: 1px solid rgba(103,232,249,.55);
+    box-shadow: 0 18px 55px rgba(0,188,212,.12);
+}
 
-    @keyframes float {
-      0% { transform: translateY(0); }
-      50% { transform: translateY(-10px); }
-      100% { transform: translateY(0); }
-    }
+header::before {
+    content: "";
+    position: absolute;
+    width: 320px;
+    height: 320px;
+    border: 1px solid rgba(255,255,255,.13);
+    border-radius: 50%;
+    top: -190px;
+    right: -70px;
+    box-shadow: 0 0 0 35px rgba(255,255,255,.035),
+                0 0 0 75px rgba(255,255,255,.025);
+}
 
-    /* SECTIONS */
+h1 {
+    font-size: clamp(2.2rem,6vw,4rem);
+    letter-spacing: 3px;
+    text-shadow: 0 0 15px #00e5ff;
+}
 
-    section {
-      width: 90%;
-      margin: 25px auto;
-      padding: 20px;
-      background: rgba(30,41,59,0.9);
-      border-radius: 15px;
-      border: 1px solid #334155;
-      box-shadow: 0 0 20px rgba(0,255,255,0.1);
-      animation: fadeUp 0.8s ease;
-      scroll-margin-top: 18px;
-    }
+header h3 {
+    color: #d7fbff;
+    margin: 12px 0 22px;
+    font-weight: 500;
+}
 
-    @keyframes fadeUp {
-      from {
+header img {
+    width: min(270px,72vw);
+    height: 270px;
+    object-fit: cover;
+    border-radius: 28px;
+    border: 3px solid #a5f3fc;
+    box-shadow: 0 15px 45px rgba(0,0,0,.35),
+                0 0 28px rgba(0,229,255,.25);
+    margin: 20px auto;
+}
+
+header p {
+    margin-top: 18px;
+    color: #e0fbff;
+}
+
+/* NAVIGATION */
+
+body > button {
+    position: sticky;
+    top: 12px;
+    z-index: 1000;
+    display: block;
+    margin: 14px 0 0 5%;
+    background: rgba(8,20,39,.95);
+    border: 1px solid rgba(103,232,249,.45);
+    backdrop-filter: blur(12px);
+}
+
+#menu {
+    display: none;
+    position: fixed;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 85%;
+    max-width: 400px;
+    max-height: 80vh;
+    overflow-y: auto;
+    background: rgba(5,15,31,.97);
+    padding: 22px;
+    border-radius: 20px;
+    border: 1px solid rgba(34,211,238,.5);
+    box-shadow: 0 20px 70px rgba(0,0,0,.55);
+    backdrop-filter: blur(18px);
+    z-index: 999;
+}
+
+#menu:target {
+    display: block;
+}
+
+#menu button {
+    width: 100%;
+    background: linear-gradient(100deg,#164e9b,#087e9b);
+}
+
+#menu a {
+    display: block;
+}
+
+/* SECTIONS */
+
+section {
+    width: min(1080px,91%);
+    margin: 30px auto;
+    padding: clamp(22px,4vw,34px);
+    background: linear-gradient(145deg,rgba(20,34,57,.94),rgba(11,24,43,.94));
+    border: 1px solid rgba(100,160,190,.25);
+    border-radius: 22px;
+    box-shadow: 0 16px 45px rgba(0,0,0,.2);
+    backdrop-filter: blur(10px);
+    scroll-margin-top: 20px;
+    animation: fadeUp .8s ease;
+}
+
+@keyframes fadeUp {
+    from {
         opacity: 0;
         transform: translateY(20px);
-      }
-      to {
+    }
+    to {
         opacity: 1;
         transform: translateY(0);
-      }
+    }
+}
+
+section h2 {
+    margin-bottom: 20px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid rgba(56,189,248,.25);
+    color: #67e8f9;
+    font-size: 1.7rem;
+}
+
+section h3 {
+    color: #7dd3fc;
+}
+
+section p {
+    margin: 9px 0;
+    color: #dbeafe;
+}
+
+section li {
+    margin: 9px 0 9px 22px;
+    color: #dbeafe;
+}
+
+section img {
+    max-width: 100%;
+    display: block;
+    margin: 10px auto;
+    border-radius: 12px;
+    transition: .4s;
+}
+
+section img:hover {
+    transform: scale(1.04);
+    box-shadow: 0 0 25px rgba(0,255,255,.3);
+}
+
+/* ABOUT */
+
+#about > img {
+    width: 170px;
+    height: 170px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid #38bdf8;
+    box-shadow: 0 0 25px rgba(0,188,212,.22);
+}
+
+/* SKILLS */
+
+#skills {
+    display: grid;
+    grid-template-columns: 58px minmax(0,1fr);
+    column-gap: 15px;
+    align-items: center;
+}
+
+#skills h2 {
+    grid-column: 1/-1;
+}
+
+.skill-image {
+    width: 46px;
+    height: 46px;
+    object-fit: contain;
+    margin: 12px auto;
+    border-radius: 10px;
+}
+
+.skill-title {
+    margin: 10px 0 4px;
+}
+
+progress {
+    width: 100%;
+    height: 18px;
+    accent-color: #00e5ff;
+    grid-column: 2;
+    margin-bottom: 8px;
+}
+
+#skills br {
+    display: none;
+}
+
+.cricket-skill {
+    grid-column: 1/-1;
+    display: grid;
+    grid-template-columns: 58px minmax(0,1fr);
+    column-gap: 15px;
+    align-items: center;
+    border-top: 1px solid #334155;
+    margin-top: 20px;
+    padding-top: 20px;
+    width: 100%;
+}
+
+.cricket-skill progress {
+    grid-column: 2;
+}
+
+/* PROJECTS */
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+    gap: 18px;
+    margin-top: 20px;
+}
+
+.project-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 22px;
+    min-height: 230px;
+    border: 1px solid rgba(56,189,248,.25);
+    border-radius: 18px;
+    background: linear-gradient(145deg,rgba(30,58,95,.62),rgba(10,22,40,.85));
+    transition: .25s;
+}
+
+.project-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(34,211,238,.7);
+    box-shadow: 0 14px 30px rgba(0,188,212,.12);
+}
+
+.project-card h3 {
+    font-size: 1.2rem;
+    color: #7dd3fc;
+}
+
+.project-card p {
+    flex: 1;
+}
+
+.project-card img {
+    width: 76px;
+    height: 76px;
+    margin: 0;
+}
+
+.project-status {
+    padding: 5px 10px;
+    border-radius: 999px;
+    color: #a5f3fc;
+    background: rgba(6,182,212,.12);
+    border: 1px solid rgba(103,232,249,.25);
+    font-size: .78rem;
+    font-weight: bold;
+}
+
+/* CONTACT */
+
+#contact a {
+    color: #7dd3fc;
+}
+
+#contact a:hover {
+    color: #a5f3fc;
+    text-decoration: underline;
+}
+
+/* FOOTER */
+
+footer {
+    margin-top: 45px;
+    text-align: center;
+    padding: 25px;
+    color: #b6c8dc;
+    background: rgba(2,6,23,.96);
+    border-top: 1px solid rgba(34,211,238,.5);
+}
+
+/* RESPONSIVE */
+
+@media(max-width:768px) {
+    body > button {
+        margin-left: 3%;
     }
 
-    /* HEADINGS */
-
-    h1 {
-      text-align: center;
-      font-size: 2.3rem;
-      overflow-wrap: anywhere;
-      animation: glow 2s infinite alternate;
+    header {
+        padding: 48px 16px 40px;
     }
 
-    @keyframes glow {
-      from { text-shadow: 0 0 10px #00e5ff; }
-      to { text-shadow: 0 0 25px #00e5ff; }
+    header img {
+        width: 190px;
+        height: 190px;
     }
 
-    h2 {
-      color: #38bdf8;
-      border-left: 5px solid #00e5ff;
-      padding-left: 10px;
-      margin-bottom: 10px;
+    section {
+        width: 94%;
+        margin: 20px auto;
+        border-radius: 17px;
     }
 
-    h3 {
-      color: #60a5fa;
+    #skills {
+        grid-template-columns: 46px minmax(0,1fr);
+        column-gap: 10px;
     }
 
-    /* IMAGES */
-
-    img {
-      max-width: 100%;
-      display: block;
-      margin: 10px auto;
-      border-radius: 12px;
-      transition: 0.4s ease;
+    #skills .skill-image {
+        width: 38px;
+        height: 38px;
     }
 
-    img:hover {
-      transform: scale(1.06);
-      box-shadow: 0 0 25px rgba(0,255,255,0.4);
+    #skills .cricket-skill {
+        grid-template-columns: 46px minmax(0,1fr);
+        column-gap: 10px;
     }
 
-    /* NAVIGATION PANEL */
-
-    #menu {
-      display: none;
-      position: fixed;
-      top: 10%;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 80%;
-      max-width: 400px;
-      max-height: 80vh;
-      overflow-y: auto;
-      background: #0f172a;
-      padding: 20px;
-      border-radius: 15px;
-      border: 1px solid #334155;
-      z-index: 999;
-      animation: pop 0.4s ease;
+    .project-grid {
+        grid-template-columns: 1fr;
     }
+}
 
-    #menu:target {
-      display: block;
-    }
-
-    @keyframes pop {
-      from {
-        transform: translateX(-50%) scale(0.8);
-        opacity: 0;
-      }
-      to {
-        transform: translateX(-50%) scale(1);
-        opacity: 1;
-      }
-    }
-
-    #menu button {
-      width: 100%;
-    }
-
-    #menu a {
-      display: block;
-    }
-
-    /* BUTTONS */
-
-    button:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 20px #00e5ff;
-    }
-
-    /* SKILL PROGRESS BARS */
-
-    progress {
-      width: 100%;
-      height: 18px;
-      accent-color: #00e5ff;
-      animation: fill 2s ease-in-out;
-    }
-
-    @keyframes fill {
-      from { filter: brightness(0.5); }
-      to { filter: brightness(1); }
-    }
-
-    .skill-image {
-      width: 50px;
-    }
-
-    .skill-title {
-      margin: 0 0 5px;
-    }
-
-    .cricket-skill {
-      margin-top: 28px;
-      padding-top: 20px;
-      border-top: 1px solid #334155;
-    }
-
-    /* FOOTER */
-
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: #020617;
-      border-top: 2px solid #00e5ff;
-    }
-
-    /* MOBILE RESPONSIVE */
-
-    @media (max-width: 768px) {
-      section {
-        width: 95%;
-      }
-
-      button {
-        max-width: 100%;
-      }
-
-      header img {
-        width: 160px;
-        height: 160px;
-        object-fit: cover;
-      }
-
-      h1 {
-        font-size: 1.7rem;
-      }
-    }
-  </style>
+</style>
 </head>
 
 <body>
 
-  <!-- NAVIGATION PANEL -->
+<!-- NAVIGATION -->
 
-  <button><a href="#menu">☰ Navigation Panel</a></button>
+<button><a href="#menu">☰ Navigation Panel</a></button>
 
-  <div id="menu">
-    <button><a href="#home">Home</a></button>
-    <br><br>
-
-    <button><a href="#about">About</a></button>
-    <br><br>
-
-    <button><a href="#skills">Skills</a></button>
-    <br><br>
-
-    <button><a href="#projects">Projects</a></button>
-    <br><br>
-
-    <button><a href="#goals">Goals</a></button>
-    <br><br>
-
-    <button><a href="#achievements">Achievements</a></button>
-    <br><br>
-
-    <button><a href="#contact">Contact</a></button>
-    <br><br>
-
+<div id="menu">
+    <button><a href="#home">Home</a></button><br><br>
+    <button><a href="#about">About</a></button><br><br>
+    <button><a href="#skills">Skills</a></button><br><br>
+    <button><a href="#projects">Projects</a></button><br><br>
+    <button><a href="#goals">Goals</a></button><br><br>
+    <button><a href="#achievements">Achievements</a></button><br><br>
+    <button><a href="#contact">Contact</a></button><br><br>
     <button><a href="#">Close ✖</a></button>
-  </div>
+</div>
 
-  <!-- HOME -->
+<!-- HOME -->
 
-  <header id="home">
+<header id="home">
+
     <h1>OM BHANDARI</h1>
 
     <h3>Student • Aspiring Cricketer • BCC Co-Founder</h3>
 
-    <img
-      src="assets/images/om hero.jpeg"
-      alt="Om Bhandari profile image"
-      width="1000"
-    >
+    <img src="assets/images/om hero.jpeg"
+         alt="Om Bhandari profile image">
 
     <p><b>Dream Big • Learn Daily • Play With Discipline</b></p>
-  </header>
 
-  <!-- ABOUT ME -->
+</header>
 
-  <section id="about">
+<!-- ABOUT -->
+
+<section id="about">
+
     <h2>About Me</h2>
 
-    <img
-      src="assets/images/om.jpeg"
-      alt="Om Bhandari"
-      width="500"
-    >
+    <img src="assets/images/om.jpeg"
+         alt="Om Bhandari">
 
     <h3>Who Am I?</h3>
 
@@ -342,280 +475,243 @@
     <p><strong>Organization:</strong> Bharat Cyber Commando (BCC)</p>
 
     <p>
-      I am passionate about cricket, technology, software development,
-      communication and leadership. My main career ambition is to become
-      a professional cricketer while continuing my education and contributing
-      to Bharat Cyber Commando.
+    I am passionate about cricket, technology, software development,
+    communication and leadership. My main career ambition is to become
+    a professional cricketer while continuing my education and contributing
+    to Bharat Cyber Commando.
     </p>
-  </section>
 
-  <!-- SKILLS -->
+</section>
 
-  <section id="skills">
+<!-- SKILLS -->
+
+<section id="skills">
+
     <h2>My Skills</h2>
 
     <img class="skill-image" src="assets/images/html.png" alt="HTML">
     <h3 class="skill-title">HTML - 80%</h3>
     <progress value="80" max="100">80%</progress>
 
-    <br><br>
-
     <img class="skill-image" src="assets/images/CSS.png" alt="CSS">
     <h3 class="skill-title">CSS - 50%</h3>
     <progress value="50" max="100">50%</progress>
-
-    <br><br>
 
     <img class="skill-image" src="assets/images/TALWIND CSS.jpg" alt="Tailwind CSS">
     <h3 class="skill-title">Tailwind CSS - 50%</h3>
     <progress value="50" max="100">50%</progress>
 
-    <br><br>
-
     <img class="skill-image" src="assets/images/js.png" alt="JavaScript">
     <h3 class="skill-title">JavaScript - 40%</h3>
     <progress value="40" max="100">40%</progress>
-
-    <br><br>
 
     <img class="skill-image" src="assets/images/react.png" alt="React">
     <h3 class="skill-title">React - 30%</h3>
     <progress value="30" max="100">30%</progress>
 
-    <br><br>
-
     <img class="skill-image" src="assets/images/node-js.jpg" alt="Node.js">
     <h3 class="skill-title">Node.js - 40%</h3>
     <progress value="40" max="100">40%</progress>
-
-    <br><br>
 
     <img class="skill-image" src="assets/images/flask.png" alt="Flask">
     <h3 class="skill-title">Flask - 20%</h3>
     <progress value="20" max="100">20%</progress>
 
-    <br><br>
-
-    <img
-      class="skill-image"
-      src="assets/images/HINGLISH COMMUNICATION.png"
-      alt="Hinglish Communication"
-    >
+    <img class="skill-image" src="assets/images/HINGLISH COMMUNICATION.png" alt="Hinglish Communication">
     <h3 class="skill-title">Hinglish Communication - 95%</h3>
     <progress value="95" max="100">95%</progress>
 
-    <br><br>
-
-    <img
-      class="skill-image"
-      src="assets/images/ENGLISH COMMUNICATION.jpg"
-      alt="English Communication"
-    >
+    <img class="skill-image" src="assets/images/ENGLISH COMMUNICATION.jpg" alt="English Communication">
     <h3 class="skill-title">English Communication - 60%</h3>
     <progress value="60" max="100">60%</progress>
 
-    <br><br>
-
-    <img
-      class="skill-image"
-      src="assets/images/Public Speaking LOGO.jpg"
-      alt="Public Speaking"
-    >
+    <img class="skill-image" src="assets/images/Public Speaking LOGO.jpg" alt="Public Speaking">
     <h3 class="skill-title">Public Speaking - 85%</h3>
     <progress value="85" max="100">85%</progress>
 
-    <!-- CRICKET SKILL AT THE END -->
-
     <div class="cricket-skill">
-      <img
-        class="skill-image"
-        src="assets/images/cricket.jpeg"
-        alt="Cricket"
-      >
 
-      <h3 class="skill-title">Cricket - 80%</h3>
-      <progress value="80" max="100">80%</progress>
+        <img class="skill-image" src="assets/images/cricket.jpeg" alt="Cricket">
+
+        <h3 class="skill-title">Cricket - 80%</h3>
+
+        <progress value="80" max="100">80%</progress>
+
     </div>
-  </section>
 
-  <!-- ================= PROJECTS ================= -->
+</section>
+
+<!-- PROJECTS -->
+
 <section id="projects">
 
-  <h2>Featured Projects</h2>
-  
-  <div class="project-grid">
-  
-      <!-- ROCK PAPER SCISSORS -->
-      <div class="project-card">
-  
-          <span class="project-status">Completed • Live</span>
-  
-          <h3>Rock Paper Scissors</h3>
-  
-          <p>
-              An interactive Rock Paper Scissors game developed
-              using web technologies.
-          </p>
-  
-          <a href="https://rock-paper-scissors-bcst.vercel.app/"
-             target="_blank"
-             rel="noopener noreferrer">
-              <button>Play Game ↗</button>
-          </a>
-  
-      </div>
-  
-  
-      <!-- TIC TAC TOE -->
-      <div class="project-card">
-  
-          <span class="project-status">Completed • Live</span>
-  
-          <h3>Tic Tac Toe</h3>
-  
-          <p>
-              A classic Tic Tac Toe game with an interactive
-              gameplay experience.
-          </p>
-  
-          <a href="https://tic-tac-toe-bcst.vercel.app/"
-             target="_blank"
-             rel="noopener noreferrer">
-              <button>Play Game ↗</button>
-          </a>
-  
-      </div>
-  
-  
-      <!-- BCST WEBSITE -->
-      <div class="project-card">
-  
-          <span class="project-status">Live</span>
-  
-          <h3>BCST Website</h3>
-  
-          <img src="assets/images/bcst-logo.png"
-               alt="BCST Logo">
-  
-          <p>
-              Official website of Black Core Software Technologies.
-          </p>
-  
-          <a href="https://black-core-software-technologies.vercel.app/"
-             target="_blank"
-             rel="noopener noreferrer">
-              <button>Visit Project ↗</button>
-          </a>
-  
-      </div>
-  
-  
-      
-  
-  
-  </div>
-  
-  </section>
+    <h2>Featured Projects</h2>
 
-  <!-- GOALS -->
+    <div class="project-grid">
 
-  <section id="goals">
+        <div class="project-card">
+
+            <span class="project-status">Completed • Live</span>
+
+            <h3>Rock Paper Scissors</h3>
+
+            <p>
+            An interactive Rock Paper Scissors game developed
+            using web technologies.
+            </p>
+
+            <a href="https://rock-paper-scissors-bcst.vercel.app/"
+               target="_blank"
+               rel="noopener noreferrer">
+                <button>Play Game ↗</button>
+            </a>
+
+        </div>
+
+        <div class="project-card">
+
+            <span class="project-status">Completed • Live</span>
+
+            <h3>Tic Tac Toe</h3>
+
+            <p>
+            A classic Tic Tac Toe game with an interactive
+            gameplay experience.
+            </p>
+
+            <a href="https://tic-tac-toe-bcst.vercel.app/"
+               target="_blank"
+               rel="noopener noreferrer">
+                <button>Play Game ↗</button>
+            </a>
+
+        </div>
+
+        <div class="project-card">
+
+            <span class="project-status">Live</span>
+
+            <h3>BCST Website</h3>
+
+            <img src="assets/images/bcst-logo.png"
+                 alt="BCST Logo">
+
+            <p>
+            Official website of Black Core Software Technologies.
+            </p>
+
+            <a href="https://black-core-software-technologies.vercel.app/"
+               target="_blank"
+               rel="noopener noreferrer">
+                <button>Visit Project ↗</button>
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- GOALS -->
+
+<section id="goals">
+
     <h2>Future Goals</h2>
 
-    <img
-      src="assets/images/goals.jpeg"
-      alt="Future goals"
-      width="400"
-    >
+    <img src="assets/images/goals.jpeg"
+         alt="Future goals"
+         width="400">
 
     <ul>
-      <li>Become a professional cricketer.</li>
-      <li>Improve cricket skills through practice and discipline.</li>
-      <li>Continue learning software development.</li>
-      <li>Contribute to Bharat Cyber Commando.</li>
-      <li>Improve teamwork and communication skills.</li>
+        <li>Become a professional cricketer.</li>
+        <li>Improve cricket skills through practice and discipline.</li>
+        <li>Continue learning software development.</li>
+        <li>Contribute to Bharat Cyber Commando.</li>
+        <li>Improve teamwork and communication skills.</li>
     </ul>
-  </section>
 
-  <!-- ACHIEVEMENTS -->
+</section>
 
-  <section id="achievements">
+<!-- ACHIEVEMENTS -->
+
+<section id="achievements">
+
     <h2>Achievements</h2>
 
-    <img
-      src="assets/images/acheivments.jpeg"
-      alt="Achievements"
-      width="400"
-    >
+    <img src="assets/images/acheivments.jpeg"
+         alt="Achievements"
+         width="400">
 
     <p>
-      This section can showcase verified cricket milestones, certificates,
-      awards and other achievements as they are earned.
+    This section can showcase verified cricket milestones, certificates,
+    awards and other achievements as they are earned.
     </p>
 
     <h3>Education</h3>
 
     <p>
-      Currently studying at Hind Public School and continuing to develop
-      academic, sports and technology skills.
+    Currently studying at Hind Public School and continuing to develop
+    academic, sports and technology skills.
     </p>
 
-    <img
-      src="assets/images/hind public school logo.png"
-      alt="Hind Public School logo"
-    >
+    <img src="assets/images/hind public school logo.png"
+         alt="Hind Public School logo">
 
-    <img
-      src="assets/images/hind public school.jpg"
-      alt="Hind Public School"
-    >
-  </section>
+    <img src="assets/images/hind public school.jpg"
+         alt="Hind Public School">
 
-  <!-- CONTACT -->
+</section>
 
-  <section id="contact">
+<!-- CONTACT -->
+
+<section id="contact">
+
     <h2>Contact Me</h2>
 
     <p><b>Name:</b> Om Bhandari</p>
 
     <a href="mailto:kisubhandari488@gmail.com">
-      <img
-        src="assets/images/email.jpg"
-        alt="Email Om Bhandari"
-        width="120"
-      >
+        <img src="assets/images/email.jpg"
+             alt="Email Om Bhandari"
+             width="120">
     </a>
 
     <p>
-      Email:
-      <a href="mailto:kisubhandari488@gmail.com">
-        kisubhandari488@gmail.com
-      </a>
+        Email:
+        <a href="mailto:kisubhandari488@gmail.com">
+            kisubhandari488@gmail.com
+        </a>
     </p>
 
     <h3>Instagram</h3>
-<a href="https://www.instagram.com/bhandari24om/"
-target="_blank">
-    <img
-    src="assets/images/instagram.jpg"
-    alt="Instagram"
-    width="120"
-  >
-</a>
+
+    <a href="https://www.instagram.com/bhandari24om/"
+       target="_blank"
+       rel="noopener noreferrer">
+
+        <img src="assets/images/instagram.jpg"
+             alt="Instagram"
+             width="120">
+
+    </a>
+
     <p>
-      <a
-        href="https://www.instagram.com/bhandari24om/"
-        target="_blank"
-        rel="noopener noreferrer"
-      >@bhandari24om</a>
+        <a href="https://www.instagram.com/bhandari24om/"
+           target="_blank"
+           rel="noopener noreferrer">
+            @bhandari24om
+        </a>
     </p>
-  </section>
 
-  <!-- FOOTER -->
+</section>
 
-  <footer>
+<!-- FOOTER -->
+
+<footer>
+
     <p>© 2026 Om Bhandari | All Rights Reserved</p>
-  </footer>
-</head>
+
+</footer>
+
 </body>
 </html>
